@@ -37,6 +37,21 @@ void printBoard()
 	}
 	cout<<endl;
 }
+void printRunner()
+{
+	cout<<endl;
+		cout<<"After play runner are"<<endl;
+		for(int i=0;i<m;i++)
+		{
+			if(isOut[i])
+			{
+				cout<<"runner "<<i<<" is Out "<<endl;
+				continue;
+			}
+			cout<<"runner "<<i<<" is at "<<runner[i].first << " " <<runner[i].second<<endl;
+		}
+		cout<<endl;
+}
 void play();
 int main()
 {
@@ -66,19 +81,7 @@ int main()
 	{
 		play();
 		//printBoard();
-
-		// cout<<endl;
-		// cout<<"After play runner are"<<endl;
-		// for(int i=0;i<m;i++)
-		// {
-		// 	if(isOut[i])
-		// 	{
-		// 		cout<<"runner "<<i<<" is Out "<<endl;
-		// 		continue;
-		// 	}
-		// 	cout<<"runner "<<i<<" is at "<<runner[i].first << " " <<runner[i].second<<endl;
-		// }
-		// cout<<endl;
+		//printRunner();
 	}
 
 	int sum = 0;
@@ -193,7 +196,6 @@ void rotate(int x, int y, int length)
 void play()
 {
 	moveRunner();
-	
 	if(isAllOut) return;
 
 	int minLength = 1000;
@@ -249,6 +251,6 @@ void play()
 		}
 		//cout<<"runner "<<i<<" length "<<length<<" minLength "<<minLength<<" sx = "<<sx<<" sy = "<<sy<<endl;
 	}
-
+	if(sx == 1000 && sy == 1000) return;
 	rotate(sx, sy, minLength);
 }
