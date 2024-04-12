@@ -7,7 +7,7 @@ int board[10][10];
 int recentAttack[10][10];
 int N, M, k;
 
-int dx[] = { 0,1,0,-1, 1,1,-1 - 1 };
+int dx[] = { 0,1,0,-1, 1,1,-1, -1 };
 int dy[] = { 1,0,-1,0, 1,-1,1,-1 };
 
 void play(int);
