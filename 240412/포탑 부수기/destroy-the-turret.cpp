@@ -223,19 +223,15 @@ void play(int time)
 
 	int power = board[weakTower.first][weakTower.second];
 
-	int size = path.size();
-	if (findPath)
+	for (int i = 0; i < path.size(); i++)
 	{
-		for (int i = 0; i < size; i++)
-		{
-			if(i==0) continue;
-			if(i == size - 1) break;
-			int x = path[i].first;
-			int y = path[i].second;
-			//cout << x << " " << y << endl;
-			board[x][y] -= power / 2;
-			if (board[x][y] < 0) board[x][y] = 0;
-		}
+		if(i==0) continue;
+		if(i == size - 1) break;
+		int x = path[i].first;
+		int y = path[i].second;
+		//cout << x << " " << y << endl;
+		board[x][y] -= power / 2;
+		if (board[x][y] < 0) board[x][y] = 0;
 	}
 	
 
