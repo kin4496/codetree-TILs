@@ -227,8 +227,7 @@ void play(int time)
 	{
 		for (int i = 1; i < size - 1; i++)
 		{
-			//cout << path.size() - 1 << endl;
-			cout << i << endl;
+			if(i>= path.size()) break;
 			int x = path[i].first;
 			int y = path[i].second;
 			//cout << x << " " << y << endl;
