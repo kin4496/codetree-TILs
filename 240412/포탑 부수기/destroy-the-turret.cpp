@@ -223,7 +223,7 @@ void play(int time)
 	int power = board[weakTower.first][weakTower.second];
 
 	int size = path.size();
-	if (size != 0)
+	if (size != 0 || path.size()>= 10000)
 	{
 		for (int i = 1; i < size - 1; i++)
 		{
