@@ -226,9 +226,10 @@ void play(int time)
 	int size = path.size();
 	if (findPath)
 	{
-		for (int i = 1; i < size - 1; i++)
+		for (int i = 0; i < size; i++)
 		{
-			if(i>= path.size()) break;
+			if(i==0) continue;
+			if(i == size - 1) break;
 			int x = path[i].first;
 			int y = path[i].second;
 			//cout << x << " " << y << endl;
