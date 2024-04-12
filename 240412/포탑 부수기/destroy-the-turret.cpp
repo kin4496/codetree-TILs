@@ -157,11 +157,11 @@ pair<int, int> getStrongTower()
 
 	return make_pair(x, y);
 }
-
+bool findPath = true;
 vector<pair<int,int>> lazerAttack(pair<int, int>weakTower, pair<int, int> strongTower)
 {
 	int minDist = abs(weakTower.first - strongTower.first) + abs(weakTower.second - strongTower.second);
-	
+	findPath = false;
 	vector<vector<int>> visited(N, vector<int>(M, 0));
 	visited[weakTower.first][weakTower.second] = 1;
 
@@ -181,6 +181,7 @@ vector<pair<int,int>> lazerAttack(pair<int, int>weakTower, pair<int, int> strong
 		path.push_back(make_pair(x, y));
 		if (x == destx && y == desty)
 		{
+			findPath = true;
 			minPath = path;
 			break;
 		}
@@ -223,7 +224,7 @@ void play(int time)
 	int power = board[weakTower.first][weakTower.second];
 
 	int size = path.size();
-	if (size != 0 || path.size()>= 10000)
+	if (findPath)
 	{
 		for (int i = 1; i < size - 1; i++)
 		{
