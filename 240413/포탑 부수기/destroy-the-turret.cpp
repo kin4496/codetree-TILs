@@ -7,7 +7,7 @@ int board[10][10];
 int recentAttack[10][10];
 int N, M, k;
 
-int dx[] = { 0,1,0,-1, 1,1,-1, -1 };
+int dx[] = { 0,1,0,-1, 1,1,-1, - 1 };
 int dy[] = { 1,0,-1,0, 1,-1,1,-1 };
 
 void play(int);
@@ -170,7 +170,7 @@ pair<int, int> getStrongTower()
 bool findPath = true;
 vector<pair<int, int>> lazerAttack(pair<int, int>weakTower, pair<int, int> strongTower)
 {
-	int minDist = abs(weakTower.first - strongTower.first) + abs(weakTower.second - strongTower.second);
+	int minDist = 10000;
 	findPath = false;
 	vector<vector<int>> visited(N, vector<int>(M, 0));
 	visited[weakTower.first][weakTower.second] = 1;
@@ -189,11 +189,12 @@ vector<pair<int, int>> lazerAttack(pair<int, int>weakTower, pair<int, int> stron
 		int y = q.front().second.second.second;
 		q.pop();
 		path.push_back(make_pair(x, y));
-		if (x == destx && y == desty)
+		if (x == destx && y == desty && minDist > d)
 		{
 			findPath = true;
 			minPath = path;
-			break;
+			minDist = d;
+			continue;
 		}
 
 		if (d >= minDist) continue;
@@ -222,8 +223,8 @@ void play(int time)
 {
 	pair<int, int> weakTower = getWeakTower();
 	pair<int, int> strongTower = getStrongTower();
-	//cout<<"weak Tower " << weakTower.first << " " << weakTower.second << endl;
-	//cout << "strong Tower " << strongTower.first << " " << strongTower.second << endl;
+	//cout<<"weak Tower " << weakTower.first << " " << weakTower.second<<" "<<board[weakTower.first][weakTower.second] << endl;
+	//cout << "strong Tower " << strongTower.first << " " << strongTower.second<<" "<<board[strongTower.first][strongTower.second] << endl;
 
 	board[weakTower.first][weakTower.second] += (N + M);
 	recentAttack[weakTower.first][weakTower.second] = time + 1;
