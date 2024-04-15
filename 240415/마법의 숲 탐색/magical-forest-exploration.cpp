@@ -75,9 +75,9 @@ bool tryDown(int row, int col)
 {
 
 	if (row + 1 >= R || row + 2 >= R) return false;
-	if (row + 1 > 0 && board[row + 1][col - 1] >= 1) return false;
-	if (row + 1 > 0 && board[row + 1][col + 1] >= 1) return false;
-	if (row + 2 > 0 && board[row + 2][col] >= 1) return false;
+	if (row + 1 >= 0 && board[row + 1][col - 1] >= 1) return false;
+	if (row + 1 >= 0 && board[row + 1][col + 1] >= 1) return false;
+	if (row + 2 >= 0 && board[row + 2][col] >= 1) return false;
 
 	return true;
 }
@@ -85,9 +85,9 @@ bool tryDown(int row, int col)
 bool tryLeft(int row, int col)
 {
 	if (col - 1 < 0 || col - 2 < 0) return false;
-	if (row - 1 > 0 && board[row - 1][col - 1] >= 1) return false;
-	if (row + 1 > 0 && board[row + 1][col - 1] >= 1) return false;
-	if (row > 0 && board[row][col - 2] >= 1) return false;
+	if (row - 1 >= 0 && board[row - 1][col - 1] >= 1) return false;
+	if (row + 1 >= 0 && board[row + 1][col - 1] >= 1) return false;
+	if (row >= 0 && board[row][col - 2] >= 1) return false;
 
 	return tryDown(row, col - 1);
 }
@@ -95,9 +95,9 @@ bool tryLeft(int row, int col)
 bool tryRight(int row, int col)
 {
 	if (col + 1 >= C || col + 2 >= C) return false;
-	if (row - 1 > 0 && board[row - 1][col + 1] >= 1) return false;
-	if (row + 1 > 0 && board[row + 1][col + 1] >= 1) return false;
-	if (row > 0 && board[row][col + 2] >= 1) return false;
+	if (row - 1 >= 0 && board[row - 1][col + 1] >= 1) return false;
+	if (row + 1 >= 0 && board[row + 1][col + 1] >= 1) return false;
+	if (row >= 0 && board[row][col + 2] >= 1) return false;
 
 	return tryDown(row, col + 1);
 }
