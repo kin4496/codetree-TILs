@@ -21,7 +21,7 @@ int main() {
 
     cin>>leader>>follower;
 
-    int ans = 0;
+    long long ans = 0;
     for(int i=0;i<n;i++)
     {
         ans += solve(rests[i]);
