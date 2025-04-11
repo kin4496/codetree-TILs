@@ -38,11 +38,13 @@ void teleport(int&, int&, int ,int );
 void print3dBoard();
 
 void moveExtra(int turn){
-    for(auto arr : extra){
-        int& r = arr[0];
-        int& c = arr[1];
-        int d = arr[2];
-        int v = arr[3];
+    for(int i =0 ;i<int(extra.size());i++){
+        
+
+        int r = extra[i][0];
+        int c = extra[i][1];
+        int d = extra[i][2];
+        int v = extra[i][3];
 
         if(turn % v != 0) continue;
 
@@ -52,10 +54,13 @@ void moveExtra(int turn){
         if(isInValid(nr,nc, n)) continue;
         if(board2d[nr][nc] == OBSTACLE || board2d[nr][nc] == 4) continue;
 
-        r = nr;
-        c = nc;
 
-        board2d[r][c] = EXTRA;
+        extra[i][0] = nr;
+        extra[i][1] = nc;
+
+
+
+        board2d[nr][nc] = EXTRA;
     }
 }
 int main() {
