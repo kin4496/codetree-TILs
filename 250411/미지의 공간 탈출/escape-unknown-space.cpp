@@ -204,6 +204,7 @@ int main() {
     }
 
     if(isFind == 0){
+        cout<<"2d not found"<<endl;
         cout<<-1<<endl;
         return 0;
     }
@@ -369,7 +370,7 @@ pair<int,int> findExitFrom3dBoard()
         return {x, y};
     }else if(dir == 3){//북
         int x = m - 1;
-        int y = m - 1 - (tx - stx);
+        int y = m - 1 - (ty - sty);
         //cout<<x<<" "<<y<<endl;
         for(int i=0;i<2;i++)
         {
