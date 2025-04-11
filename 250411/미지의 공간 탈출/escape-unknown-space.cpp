@@ -204,7 +204,6 @@ int main() {
     }
 
     if(isFind == 0){
-        cout<<"2d not found"<<endl;
         cout<<-1<<endl;
         return 0;
     }
