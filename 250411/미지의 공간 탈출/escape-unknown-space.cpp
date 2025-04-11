@@ -370,17 +370,16 @@ pair<int,int> findExitFrom3dBoard()
     }else if(dir == 3){//북
         int x = m - 1;
         int y = m - 1 - (tx - stx);
-
-        for(int i=0;i<1;i++)
+        //cout<<x<<" "<<y<<endl;
+        for(int i=0;i<2;i++)
         {
             int temp = x;
             x = y;
             y = m - 1 - temp;
         }
 
-        x += m;
         y += m;
-
+        //cout<<x<<" "<<y<<endl;
         return {x, y};
     }
 
