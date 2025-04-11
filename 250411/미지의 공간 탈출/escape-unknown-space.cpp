@@ -341,7 +341,9 @@ pair<int,int> findExitFrom3dBoard()
         return {x, y};
     }else if(dir == 1){//서
         int x = m - 1;
-        int y = m - (tx - stx) - 1;
+        int y = tx - stx;
+        
+        //cout<<x<<" "<<y<<endl;
 
         for(int i=0;i<1;i++)
         {
@@ -355,7 +357,7 @@ pair<int,int> findExitFrom3dBoard()
         return {x, y};
     }else if(dir == 2){//남
         int x = m - 1;
-        int y = tx - stx;
+        int y = ty - sty;
 
         x += 2 * m;
         y += m;
@@ -363,7 +365,7 @@ pair<int,int> findExitFrom3dBoard()
         return {x, y};
     }else if(dir == 3){//북
         int x = m - 1;
-        int y = tx - stx;
+        int y = m - 1 - (tx - stx);
 
         for(int i=0;i<1;i++)
         {
