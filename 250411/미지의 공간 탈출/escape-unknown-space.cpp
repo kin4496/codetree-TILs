@@ -203,6 +203,10 @@ int main() {
         moveExtra(turn);
     }
 
+    if(isFind == 0){
+        cout<<-1<<endl;
+        return 0;
+    }
     cout<<turn<<endl;
 
     return 0;
