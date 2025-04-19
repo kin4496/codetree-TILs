@@ -85,6 +85,7 @@ public class Main {
                     r--;
                 }
 
+                int ans = 0;
                 int cost = 0;
                 int last = 0;
 
@@ -93,12 +94,14 @@ public class Main {
                     if(arr.get(j) != 1)
                     {
                         cost += temp.get(j) - last;
+                    }else{
+                        ans = Math.max(cost, ans);
+                        cost = 0;
                     }
-
                     last = temp.get(j);
                 }
-
-                System.out.println(cost);
+                ans = Math.max(cost, ans);
+                System.out.println(ans);
             }
         }
     }
